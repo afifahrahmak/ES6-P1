@@ -301,22 +301,25 @@ let argv = process.argv;
 let row = Number(argv[2]);
 let col = Number(argv[3]);
 
-let arr = [];
-
-for (let i = 0; i < row; i++) {
-    let output;
-
-    arr[i] = [];
-
-    for (let j = 0; j < col; j++) {
-        arr[i][j] = '.';
+function generateBoard() {
+    let arr = [];
+    for (let i = 0; i < row; i++) {
+        arr[i] = [];
+        for (let j = 0; j < col; j++) {
+            arr[i][j] = '.';
+        }
     }
-
-    // output = '|' + arr[i].join('|') + '|';
-    output = `|${arr[i].join('|')}|`;
-
-    console.log(output);
+    return arr
 }
+console.log(boardToString(generateBoard(row, col)));
+function boardToString(board) {
+    let output = []
+    for (let i = 0; i < board.length; i++) {
+        output.push(`|${board[i].join('|')}|`);
+    }
+    return output.join('\n')
+}
+console.log(boardToString(generateBoard(row, col)));
 ```
 
 ### [For Each](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
