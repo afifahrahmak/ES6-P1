@@ -311,7 +311,8 @@ function generateBoard() {
     }
     return arr
 }
-console.log(boardToString(generateBoard(row, col)));
+console.log(generateBoard(row, col));
+
 function boardToString(board) {
     let output = []
     for (let i = 0; i < board.length; i++) {
