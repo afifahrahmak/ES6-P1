@@ -32,7 +32,7 @@ console.log(arr[0]);
 console.log(arr[1]);
 
 for (let i = 0; i < arr.length; i++) {
-    console.log(arrayPenampung[i]);
+    console.log(arr[i]);
 }
 ```
 
