@@ -12,15 +12,11 @@ arr.push('data kedua');
 console.log(arr[0]);
 console.log(arr[1]);
 
-for (let i = 0; i < arr.length; i++) {
-    console.log(arrayPenampung[i]);
-}
-
 
 // ----------------------------------------------------------------------------
 // Object
 // ----------------------------------------------------------------------------
-let objStudent = {};
+// let objStudent = {};
 
 // Cara set value dalam objStudent
 objStudent.nama = 'Daniel';
@@ -34,5 +30,5 @@ let objStudent2 = {
     id: '02'
 };
 
-console.log(objStudent.nama);
-console.log(objStudent2['nama']);
+// console.log(objStudent.nama);
+// console.log(objStudent2['nama']);

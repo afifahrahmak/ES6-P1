@@ -11,12 +11,14 @@ console.log(name);
 
 
 const {
-    sum1,
-    sum2,
-    sum3,
-    sum4
-} = require('./4a-moduleExports.js')
+    penjumlahan,
+    pengurangan,
+    perkalian,
+    pembagian
+} = require('./4a-moduleExports')
 
 // driver code start here
-sum1(10, 20);
-sum2(20, 30);
+console.log(penjumlahan(10, 20));
+console.log(pengurangan(30, 10));
+console.log(perkalian(5, 4));
+console.log(pembagian(30, 3));

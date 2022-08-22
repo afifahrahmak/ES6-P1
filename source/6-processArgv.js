@@ -10,22 +10,3 @@ let argv = process.argv;
 console.log(argv);
 console.log(argv[2]);
 
-
-let row = Number(argv[2]);
-let col = Number(argv[3]);
-
-let arr = [];
-
-for (let i = 0; i < row; i++) {
-    let output;
-
-    arr[i] = [];
-
-    for (let j = 0; j < col; j++) {
-        arr[i][j] = '.';
-    }
-
-    // output = '|' + arr[i].join('|') + '|';
-    output = `|${arr[i].join('|')}|`;
-    console.log(output);
-}

@@ -1,9 +1,11 @@
-
-const sum1 = require('./4a-moduleExports.js').sum;
-const sum2 = require('./4a-moduleExports.js').sum2;
-const sum3 = require('./4a-moduleExports.js').sum3;
-const sum4 = require('./4a-moduleExports.js').sum4;
+// Imported data (function)
+const penjumlahan = require('./4a-moduleExports').penjumlahan;
+const pengurangan = require('./4a-moduleExports').pengurangan;
+const perkalian = require('./4a-moduleExports').perkalian;
+const pembagian = require('./4a-moduleExports').pembagian;
 
 // driver code start here
-sum1(10, 20);
-sum2(20, 30);
+console.log(penjumlahan(10, 20));
+console.log(pengurangan(30, 10));
+console.log(perkalian(5, 4));
+console.log(pembagian(30, 3));

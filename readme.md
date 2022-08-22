@@ -3,16 +3,18 @@
     * [Array](#array)
     * [Object](#object)
     * [Passed by Value and Reference](#passed-by-value-and-reference)
-1. [Arrow Function](#arrow-function)
-1. [module.exports](#module.exports)
-1. [Basic Destructuring](#basic-destructuring)
-1. [process.argv](#process.argv)
-1. [Referensi](#referensi)
+2. [Use Strict](#use-strict)
+3. [Arrow Function](#arrow-function)
+4. [Module Export](#module-export)
+5. [Basic Destructuring](#basic-destructuring)
+6. [process.argv](#process.argv)
+7. [Built-in Function](#built-in-function)
+8. [Referensi](#referensi)
 
 
 ## Data Structures
 
-### Array
+### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 Kumpulan data yang disatukan dalam 1 variable
 
 Cara pakai:
@@ -35,7 +37,7 @@ for (let i = 0; i < arr.length; i++) {
 ```
 
 
-### Object
+### [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 Merupakan kumpulan data yang umumnya menyatakan sesuatu 
 
 Contoh :  
@@ -65,7 +67,7 @@ console.log(objStudent2['nama']);
 ```
 
 
-### Passed by Value and Reference
+### [Passed by Value and Reference](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
 **Warning**   
 Tipe data primitif dalam javascript (`Boolean`, `null`, `undefined`, `String`, `number`)   
 umumnya bersifat *passed by value*, yaitu value dalam tipe data tersebut akan dikirimkan  
@@ -123,33 +125,42 @@ copyObj['batch name'] = 'King Fox'
 
 console.log(obj, copyObj)
 ```
+## [Use Strict](https://www.w3schools.com/js/js_strict.asp)
 
+Run javascript into strict mode, can be declared globally or locally (inside function)
+- Using an object & variable, without declaring it
+- Duplicating a parameter name
+- Using booked name (with, arguments, etc) as variable
+<br><br>
 
 ## Arrow Function
 Membuat penulisan function menjadi lebih singkat
 
 Code:
+
 ```javascript
+// Export File
+
 // Cara menulis fungsi yang umum digunakan
-function sum(param1, param2) {
+function penjumlahan(param1, param2) {
   return param1 + param2;
 }
 
 // Alternatif cara menulis fungsi
-var sum2 = function (param1, param2) {
-  return param1 + param2;
+let pengurangan = function (param1, param2) {
+  return param1 - param2;
 }
 
 // Cara penulisan function dengan arrow function
-let sum3 = (param1, param2) => {
-  return param1 + param2;
+let perkalian = (param1, param2) => {
+  return param1 * param2;
 }
 
 // Bila akan langsung mereturn, arrow function tanpa curly bracket { }
-let sum4 = (param1, param2) => param1 + param2;
+let pembagian = (param1, param2) => param1 / param2;
 ```
 
-## module.exports
+## Module Export
 Dalam dunia programming, sebisa mungkin kita harus memodularisasikan kode yang
 kita miliki. nah salah satu caranya adalah dengan memecah-mecah kode yang dibuat
 ke dalam beberapa file.
@@ -160,54 +171,44 @@ supaya bisa terhubung walau ada dalam file yang berbeda.
 Mari kita lihat kembali fungsi yang sudah kita buat dalam pembelajaran arrow
 function tadi dan melakukan `export` dan `import` terhadap kode tersebut
 
-```javascript
-// Export File
 
-// Cara menulis fungsi yang umum digunakan
-function sum1(param1, param2) {
-  return param1 + param2;
-}
-
-// Alternatif cara menulis fungsi
-var sum2 = function (param1, param2) {
-  return param1 + param2;
-}
-
-// Cara penulisan function dengan arrow function
-let sum3 = (param1, param2) => {
-  return param1 + param2;
-}
-
-// Bila akan langsung mereturn, arrow function tanpa curly bracket { }
-let sum4 = (param1, param2) => param1 + param2;
-
+```js
 // kita akan melakukan export supaya bisa digunakan pada file lain
 // supaya bisa menampung banyak, kita akan menggunakan object
+// multiple variable / function
+// assign to object or array
 module.exports = {
-  sum1,
-  sum2,
-  sum3,
-  sum4
+  penjumlahan,
+  pengurangan,
+  perkalian,
+  pembagian
 };
+
+// single variable / function
+module.exports = penjumlahan
 ```
+
+
+<br>
+
+
 
 Sedangkan untuk importnya adalah kita menggunakan
 ```javascript
 // Imported data (function)
-const sum1 = require('./path/to/file/exported/fileName.js').sum;
-const sum2 = require('./path/to/file/exported/fileName.js').sum2;
-const sum3 = require('./path/to/file/exported/fileName.js').sum3;
-const sum4 = require('./path/to/file/exported/fileName.js').sum4;
+const penjumlahan = require('./path/to/file/exported/fileName.js').penjumlahan;
+const pengurangan = require('./path/to/file/exported/fileName.js').pengurangan;
+const perkalian = require('./path/to/file/exported/fileName.js').perkalian;
+const pembagian = require('./path/to/file/exported/fileName.js').pembagian;
 
 // driver code
-sum1(10, 20);
-sum2(20, 30);
+console.log(penjumlahan(10, 20));
+console.log(pengurangan(20, 30));
 ```
 
-## Basic Destructuring
-Mari kita lihat sedikit lagi mengenai kode fungsi penjumlahan kita yang ada di atas.
-Pada saat melakukan import, kita menuliskan cukup banyak repetisi kode kita yah !
-Ada tidak yah cara untuk mempersingkat kode kita lagi?
+## [Basic Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+Mari kita lihat sedikit lagi mengenai kode fungsi aritmatik kita yang ada di atas.
+Pada saat melakukan import, kita menuliskan cukup banyak repetisi kode kita. Ada tidak yah cara untuk mempersingkat kode kita lagi?
 
 Tentu saja ada !
 
@@ -236,20 +237,19 @@ maka akan berubah menjadi
 
 ```javascript
 const { 
-  sum1,
-  sum2,
-  sum3,
-  sum4
+  penjumlahan,
+  pengurangan,
+  perkalian,
+  pembagian
 } = require('./path/to/file/exported/fileName.js')
 
 // driver code start here
-sum1(10, 20);
-sum2(20, 30);
+console.log(penjumlahan(10, 20));
+console.log(pengurangan(20, 30));
 ```
 
-Terlihat lebih simpel dan lebih `malas` bukan?
 
-## process.argv
+## [process.argv](https://www.geeksforgeeks.org/node-js-process-argv-property/)
 Selama ini kan kita menggunakan file .js secara langsung kita panggil misal `node index.js`  
 tapi bagaimana yah caranya kita ingin menangkap suatu nilai yang dilempar pada saat kita  
 memanggil node tersebut? misalnya `node index.js "Cetak aku mas"`  
@@ -260,7 +260,7 @@ Code:
 ```javascript
 let argv = process.argv;
 
-// Outputnya adalah dalam bentuk array
+// Output dari argv adalah bentuk array
 // array0 => Posisi node dipanggil dari mana
 // array1 => Posisi file .js dipanggil dari mana
 // array2..n ==> Data / Value yang kita lemparkan
@@ -319,6 +319,62 @@ for (let i = 0; i < row; i++) {
 }
 ```
 
+### [For Each](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+loop through array
+```js
+const num = [1, 5, 12];
+
+num.forEach(element => {
+  console.log(element)
+});
+
+// expected output: "1"
+// expected output: "5"
+// expected output: "12"
+
+```
+
+### [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+Manipulated all array elements with same logic, and push it to new array
+```js
+const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+
+console.log(array1, map1);
+// expected output: Array [1, 4, 9, 16] Array [2, 8, 18, 32]
+```
+### [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+Create new array returning element with passed true on callback function
+```js
+const num = [1, 4, 9, 16];
+
+const bigNum = num.filter(n => {
+  return n > 8
+})
+
+console.log(bigNum)
+// [ 9, 16 ]
+```
+
+### [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+Sum / add element to defined initial value
+```js
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// expected output: 10
+```
+
+
 ## Referensi
 * [Perbedaan var, const, let - Medium](https://medium.com/coderupa/es6-var-let-const-apa-bedanya-1cd4daaee9f0)
 * [Javascript Array Objects - TutorialsPoint](https://www.tutorialspoint.com/javascript/javascript_arrays_object.htm)
@@ -327,3 +383,4 @@ for (let i = 0; i < row; i++) {
 * [Strict Mode - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [Destructuring - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 * [Value vs Reference - Codeburst](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
+* [Array Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods)

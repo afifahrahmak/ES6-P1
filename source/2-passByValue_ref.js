@@ -22,14 +22,14 @@ let copyArr = arr;
 
 arr.push(1);
 
-console.log(arr, copyArr);
+// console.log(arr, copyArr);
 
 let obj = {
     name: 'Afifah',
-    'batch name': 'Munich Fox'
+    'batch name': 'Xenia Fox'
 }
 
 let copyObj = obj
 copyObj['batch name'] = 'King Fox'
 
-console.log(obj, copyObj)
+// console.log(obj, copyObj)
