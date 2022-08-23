@@ -12,7 +12,8 @@
 8. [Referensi](#referensi)
 
 
-## Data Structures [source]('./source/1-dataStructure.js')
+## Data Structures 
+[source](/source/1-dataStructure.js)
 
 ### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 Kumpulan data yang disatukan dalam 1 variable
