@@ -7,7 +7,7 @@
 3. [Arrow Function](#arrow-function)
 4. [Module Export](#module-export)
 5. [Basic Destructuring](#basic-destructuring)
-6. [process.argv](#process.argv)
+6. [process.argv](#process-argv)
 7. [Built-in Function](#built-in-function)
 8. [Referensi](#referensi)
 
@@ -249,7 +249,7 @@ console.log(pengurangan(20, 30));
 ```
 
 
-## [process.argv](https://www.geeksforgeeks.org/node-js-process-argv-property/)
+## [Process Argv](https://www.geeksforgeeks.org/node-js-process-argv-property/)
 Selama ini kan kita menggunakan file .js secara langsung kita panggil misal `node index.js`  
 tapi bagaimana yah caranya kita ingin menangkap suatu nilai yang dilempar pada saat kita  
 memanggil node tersebut? misalnya `node index.js "Cetak aku mas"`  
