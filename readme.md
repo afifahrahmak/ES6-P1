@@ -8,12 +8,12 @@
 4. [Module Export](#module-export)
 5. [Basic Destructuring](#basic-destructuring)
 6. [process.argv](#process-argv)
-7. [Built-in Function](#built-in-function)
+7. [Built-in Function](#array-builtin-function)
 8. [Referensi](#referensi)
 
 
 ## Data Structures 
-[source](/source/1-dataStructure.js)
+[source file js](/source/1-dataStructure.js)
 
 ### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 Kumpulan data yang disatukan dalam 1 variable
@@ -69,6 +69,7 @@ console.log(objStudent2['nama']);
 
 
 ### [Passed by Value and Reference](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
+[source file js](/source/2-passByValue_ref.js)
 **Warning**   
 Tipe data primitif dalam javascript (`Boolean`, `null`, `undefined`, `String`, `number`)   
 umumnya bersifat *passed by value*, yaitu value dalam tipe data tersebut akan dikirimkan  
@@ -135,6 +136,7 @@ Run javascript into strict mode, can be declared globally or locally (inside fun
 <br><br>
 
 ## Arrow Function
+[source file js](/source/3-arrowFunction.js)
 Membuat penulisan function menjadi lebih singkat
 
 Code:
@@ -172,6 +174,7 @@ supaya bisa terhubung walau ada dalam file yang berbeda.
 Mari kita lihat kembali fungsi yang sudah kita buat dalam pembelajaran arrow
 function tadi dan melakukan `export` dan `import` terhadap kode tersebut
 
+[source file js](/source/4a-moduleExports.js)
 
 ```js
 // kita akan melakukan export supaya bisa digunakan pada file lain
@@ -193,8 +196,8 @@ module.exports = penjumlahan
 <br>
 
 
-
 Sedangkan untuk importnya adalah kita menggunakan
+[source file js](/source/4b-moduleExports.js)
 ```javascript
 // Imported data (function)
 const penjumlahan = require('./path/to/file/exported/fileName.js').penjumlahan;
@@ -208,6 +211,7 @@ console.log(pengurangan(20, 30));
 ```
 
 ## [Basic Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+[source file js](/source/5-destructuringObj.js)
 Mari kita lihat sedikit lagi mengenai kode fungsi aritmatik kita yang ada di atas.
 Pada saat melakukan import, kita menuliskan cukup banyak repetisi kode kita. Ada tidak yah cara untuk mempersingkat kode kita lagi?
 
@@ -251,6 +255,8 @@ console.log(pengurangan(20, 30));
 
 
 ## [Process Argv](https://www.geeksforgeeks.org/node-js-process-argv-property/)
+[source file js](/source/6-processArgv.js)
+
 Selama ini kan kita menggunakan file .js secara langsung kita panggil misal `node index.js`  
 tapi bagaimana yah caranya kita ingin menangkap suatu nilai yang dilempar pada saat kita  
 memanggil node tersebut? misalnya `node index.js "Cetak aku mas"`  
@@ -323,6 +329,9 @@ function boardToString(board) {
 }
 console.log(boardToString(generateBoard(row, col)));
 ```
+
+## Array Builtin Function 
+[source file js](/source/7-builtinArray.js)
 
 ### [For Each](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 loop through array
