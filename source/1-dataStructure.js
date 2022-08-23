@@ -1,3 +1,5 @@
+'use strict'
+
 // ----------------------------------------------------------------------------
 // Array
 // ----------------------------------------------------------------------------
@@ -6,17 +8,24 @@ let arr = [];
 // cara pakai array
 arr.push('data pertama');
 arr.push('data kedua');
+arr.push('data ketiga');
+
+
 
 // cara akses value
 // ingat array itu cara pakainya selalu dari 0 untuk index pertamanya
-console.log(arr[0]);
-console.log(arr[1]);
+console.log(arr[0]); //! DATA PERTAMA
+console.log(arr[1]); //!DATA KEDUA
+
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+}
 
 
 // ----------------------------------------------------------------------------
 // Object
 // ----------------------------------------------------------------------------
-// let objStudent = {};
+let objStudent = {};
 
 // Cara set value dalam objStudent
 objStudent.nama = 'Daniel';
@@ -30,5 +39,5 @@ let objStudent2 = {
     id: '02'
 };
 
-// console.log(objStudent.nama);
-// console.log(objStudent2['nama']);
+console.log(objStudent.nama);
+console.log(objStudent2['nama']);

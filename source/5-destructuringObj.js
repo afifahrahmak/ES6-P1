@@ -4,19 +4,15 @@ const anObject = {
 };
 
 // destructuring object
-const { id, name } = anObject;
+const { name, id, batchName } = anObject;
 
-console.log(id);
-console.log(name);
+console.log(id); //! 1
+console.log(name); //! "Destructuring"
+console.log(batchName); //! undefined
 
 
-const {
-    penjumlahan,
-    pengurangan,
-    perkalian,
-    pembagian
-} = require('./4a-moduleExports')
 
+const { pengurangan, penjumlahan, perkalian, pembagian } = require('./3-arrowFunction')
 // driver code start here
 console.log(penjumlahan(10, 20));
 console.log(pengurangan(30, 10));

@@ -8,11 +8,14 @@ function penjumlahan(param1, param2) {
 
 // Alternatif cara menulis fungsi
 let pengurangan = function (param1, param2) {
-    return param1 - param2;
+    return param1 - param2
 }
 
 // Cara penulisan function dengan arrow function
 let perkalian = (param1, param2) => {
+    // if (param1 <= 0) {
+    //     return 'nilai number kurang'
+    // }
     return param1 * param2;
 }
 
@@ -26,3 +29,4 @@ console.log(pengurangan(30, 10));
 console.log(perkalian(5, 4));
 console.log(pembagian(30, 3));
 
+// module.exports = { penjumlahan, perkalian, pembagian, pengurangan }

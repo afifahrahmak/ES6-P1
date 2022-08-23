@@ -7,22 +7,20 @@ let str = 'Tulisan';
 let copyInt = int;
 let copyStr = 'Copyan';
 
-int = 10;
+copyInt = 10;
 str = 'Ubah Tulisan';
 
-console.log(int, str, int, copyStr);
-
-
+console.log(int, str, copyInt, copyStr);
 
 // ----------------------------------------------------------------------------
 // Pass By Refrence
 // ----------------------------------------------------------------------------
-let arr = [];
+let arr = []; //! copyArr = arr = []
 let copyArr = arr;
 
 arr.push(1);
 
-// console.log(arr, copyArr);
+console.log(arr, copyArr);
 
 let obj = {
     name: 'Afifah',
@@ -32,4 +30,4 @@ let obj = {
 let copyObj = obj
 copyObj['batch name'] = 'King Fox'
 
-// console.log(obj, copyObj)
+console.log(obj, copyObj)
