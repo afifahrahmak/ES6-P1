@@ -386,7 +386,7 @@ console.log(sumWithInitial);
 
 
 ## Referensi
-* [Perbedaan var, const, let - Medium](https://medium.com/coderupa/es6-var-let-const-apa-bedanya-1cd4daaee9f0)
+* [Difference between var,const,let - Medium](https://medium.com/coderupa/es6-var-let-const-apa-bedanya-1cd4daaee9f0)
 * [Javascript Array Objects - TutorialsPoint](https://www.tutorialspoint.com/javascript/javascript_arrays_object.htm)
 * [process.Argv - NodeJS](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
 * [Use Strict - W3Schools](https://www.w3schools.com/js/js_strict.asp)
